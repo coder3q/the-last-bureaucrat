@@ -1,0 +1,448 @@
+/* PAMO Blog — The Last Bureaucrat */
+/* AI-warm + paradigm shift + serious + hopeful */
+
+:root {
+  --bg-deep: #1a1a2e;
+  --bg-panel: #16213e;
+  --bg-card: #1f2b45;
+  --text-main: #e8e6e3;
+  --text-dim: #a0a0a0;
+  --accent-warm: #f4a261;
+  --accent-blue: #4cc9f0;
+  --accent-gold: #ffd166;
+  --accent-danger: #ef476f;
+  --accent-hope: #06d6a0;
+  --border: #2a3a5e;
+  --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-main);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 280px;
+  min-height: 100vh;
+}
+
+/* === LEFT SIDEBAR === */
+.sidebar {
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border);
+  padding: 2rem 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar .brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.3rem;
+}
+
+.sidebar .tagline {
+  font-size: 0.7rem;
+  color: var(--accent-blue);
+  margin-bottom: 1.5rem;
+}
+
+.sidebar details {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar summary {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-warm);
+  cursor: pointer;
+  padding: 0.4rem 0.3rem;
+  border-radius: var(--radius);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sidebar summary::-webkit-details-marker { display: none; }
+
+.sidebar summary::before {
+  content: '▸';
+  font-size: 0.7rem;
+  transition: transform 0.2s;
+}
+
+.sidebar details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.sidebar summary:hover {
+  background: var(--bg-card);
+}
+
+.sidebar .nav-group {
+  padding-left: 1rem;
+  margin-top: 0.3rem;
+}
+
+.sidebar .nav-group a {
+  display: block;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.sidebar .nav-group a:hover, .sidebar .nav-group a.active {
+  color: var(--text-main);
+  background: var(--bg-card);
+}
+
+/* === CENTER MAIN === */
+.main {
+  padding: 3rem 4rem;
+  max-width: 900px;
+}
+
+/* === RIGHT PANEL === */
+.right-panel {
+  background: var(--bg-panel);
+  border-left: 1px solid var(--border);
+  padding: 2rem 1.2rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.right-panel h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-hope);
+  margin-bottom: 1rem;
+}
+
+.quote-card {
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent-warm);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-dim);
+}
+
+.quote-card .attribution {
+  font-style: normal;
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* === HERO === */
+.hero {
+  text-align: center;
+  padding: 3rem 0 2rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-warm), var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.hero .subtitle {
+  font-size: 1.1rem;
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+
+.hero .pamo-spell {
+  font-size: 1rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.pamo-letter {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+}
+
+.hero .hook {
+  font-size: 1rem;
+  color: var(--text-dim);
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+/* === ROLE BUTTONS === */
+.role-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.role-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  border: 1px solid var(--border);
+}
+
+.role-btn .role-letter {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.role-btn.principal {
+  background: var(--bg-card);
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+.role-btn.principal .role-letter { color: var(--accent-gold); }
+
+.role-btn.maker {
+  background: var(--bg-card);
+  color: var(--accent-hope);
+  border-color: var(--accent-hope);
+}
+
+.role-btn.maker .role-letter { color: var(--accent-hope); }
+
+.role-btn.agent {
+  background: var(--bg-card);
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.role-btn.agent .role-letter { color: var(--accent-blue); }
+
+.role-btn.osa {
+  background: var(--bg-card);
+  color: var(--accent-warm);
+  border-color: var(--accent-warm);
+}
+
+.role-btn.osa .role-letter { color: var(--accent-warm); }
+
+.role-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* === THEORY CHIPS === */
+.theories-preview {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.theories-preview h2 {
+  font-size: 1.3rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.theory-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+
+.chip-hot {
+  color: var(--accent-warm);
+  border-color: var(--accent-warm);
+  background: rgba(244, 162, 97, 0.1);
+}
+
+.chip-warm {
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  background: rgba(255, 209, 102, 0.08);
+}
+
+.chip-cool {
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
+  background: rgba(76, 201, 240, 0.08);
+}
+
+.theory-cta {
+  font-size: 0.85rem;
+}
+
+.theory-cta a {
+  color: var(--accent-gold);
+}
+
+/* === CASE CARDS === */
+.cases-section {
+  margin-bottom: 2.5rem;
+}
+
+.cases-section h2 {
+  font-size: 1.3rem;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: all 0.2s;
+}
+
+.case-card:hover {
+  border-color: var(--accent-warm);
+  transform: translateY(-2px);
+}
+
+.case-card h3 {
+  font-size: 1rem;
+  color: var(--accent-warm);
+  margin-bottom: 0.5rem;
+}
+
+.case-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.case-card p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.case-card .tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-top: 0.8rem;
+  background: var(--bg-panel);
+}
+
+.tag.principal { color: var(--accent-gold); }
+.tag.maker { color: var(--accent-hope); }
+.tag.agent { color: var(--accent-blue); }
+.tag.theory {
+  color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
+  background: rgba(76, 201, 240, 0.08);
+  margin-left: 0.3rem;
+}
+
+/* === ARTICLE CONTENT === */
+article h1 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--accent-warm); }
+article h2 { font-size: 1.3rem; margin: 2rem 0 0.8rem 0; color: var(--accent-gold); }
+article h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem 0; color: var(--accent-blue); }
+article p { margin-bottom: 1rem; }
+article ul, article ol { margin: 1rem 0 1rem 1.5rem; }
+article li { margin-bottom: 0.5rem; }
+article blockquote {
+  border-left: 3px solid var(--accent-warm);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+}
+article a { color: var(--accent-gold); }
+
+.case-meta {
+  font-size: 0.8rem;
+  color: var(--accent-blue);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 200px 1fr; }
+  .right-panel { display: none; }
+}
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .main { padding: 2rem 1.5rem; }
+  .case-grid { grid-template-columns: 1fr; }
+}
+
+/* === PAMO word highlight in subtitle === */
+.pamo-word {
+  color: var(--accent-gold);
+  font-weight: 800;
+}
+
+/* === Hospital Preview === */
+.hospital-preview {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--accent-hope);
+  border-radius: var(--radius);
+}
+
+.hospital-preview h2 {
+  font-size: 1.3rem;
+  color: var(--accent-hope);
+  margin-bottom: 0.8rem;
+}
+
+.hospital-preview p {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin-bottom: 0.8rem;
+}
+
+.hospital-preview a {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
